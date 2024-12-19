@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Teacher Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    {% include "navbar.html" %}
+    
+    <div class="container mt-5">
+        <h1 class="text-center">Teacher Dashboard</h1>
+
+        <h2 class="mt-4">Learning Resources</h2>
+        <ul class="list-group mt-3">
+            {% for resource in resources %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ resource.name }}
+                {% if 'Lesson' in resource.is_a | map(attribute='name') %}
+                <span class="badge bg-primary">Lesson</span>
+                {% elif 'Example' in resource.is_a | map(attribute='name') %}
+                <span class="badge bg-secondary">Example</span>
+                {% endif %}
+                <button type="button" class="btn btn-info btn-sm float-end ms-3" data-bs-toggle="modal" data-bs-target="#resourceModal{{ loop.index }}">
+                    View Description
+                </button>
+            </li>
+
+            <!-- Modal for each resource -->
+            <div class="modal fade" id="resourceModal{{ loop.index }}" tabindex="-1" aria-labelledby="modalLabel{{ loop.index }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="modalLabel{{ loop.index }}">{{ resource.name }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            {{ resource.hasDescription[0] if resource.hasDescription else "No description available." }}
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </ul>
+
+        <h2 class="mt-4">Students</h2>
+        <ul class="list-group mt-3">
+            {% for student in students %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+                {{ student.hasName }}
+                <button type="button" class="btn btn-info btn-sm float-end" data-bs-toggle="modal" data-bs-target="#studentModal{{ loop.index }}">
+                    View Details
+                </button>
+            </li>
+
+            <!-- Modal for each student -->
+            <div class="modal fade" id="studentModal{{ loop.index }}" tabindex="-1" aria-labelledby="studentModalLabel{{ loop.index }}" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="studentModalLabel{{ loop.index }}">{{ student.hasName }}</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p><strong>Progress:</strong> {{ student.hasProgress[0] if student.hasProgress else 0 }}%</p>
+                            <p><strong>Score:</strong> {{ student.hasScore[0] if student.hasScore else "No score available" }}</p>
+                            <hr>
+                            <h6>Completed Lessons:</h6>
+                            <ul>
+                                {% for lesson in student.hasCompletedLesson %}
+                                <li>{{ lesson.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </ul>
+
+        <h2 class="mt-4">Problems</h2>
+        <ul class="list-group mt-3">
+            {% for problem in problems %}
+            <li class="list-group-item">{{ problem.name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,414 @@
+Prefix: : <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS/>
+Prefix: owl: <http://www.w3.org/2002/07/owl#>
+Prefix: rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+Prefix: rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+Prefix: xml: <http://www.w3.org/XML/1998/namespace>
+Prefix: xsd: <http://www.w3.org/2001/XMLSchema#>
+
+
+
+Ontology: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS>
+
+
+Datatype: xsd:decimal
+
+    
+Datatype: xsd:string
+
+    
+ObjectProperty: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isAssociatedWith>
+
+    Domain: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Problem>
+    
+    Range: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#GeometricConcept>,
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isPartOf>
+
+    Domain: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#GeometricConcept>
+    
+    Range: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Angle>,
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Triangle>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isPrerequisiteFor>
+
+    Characteristics: 
+        Functional
+    
+    Domain: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    Range: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isSolutionFor>
+
+    
+ObjectProperty: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isSolvedBy>
+
+    Domain: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Problem>
+    
+    Range: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Solution>
+    
+    
+ObjectProperty: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isTaughtUsing>
+
+    Domain: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#GeometricConcept>,
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    Range: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#LearningResource>
+    
+    
+DataProperty: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasComplexity>
+
+    Domain: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#LearningResource>
+    
+    
+DataProperty: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>
+
+    Domain: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#GeometricConcept>,
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#LearningResource>,
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    
+DataProperty: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDifficulty>
+
+    Domain: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Problem>
+    
+    
+DataProperty: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasProgress>
+
+    Domain: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Student>
+    
+    
+DataProperty: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasScore>
+
+    Domain: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Student>
+    
+    
+DataProperty: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasTopic>
+
+    Domain: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Problem>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Angle>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#GeometricConcept>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#BasicConcept>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Problem>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Cosine>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Example>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#LearningResource>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#GeometricConcept>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#MathematicalConcept>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#LearningResource>
+
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Lesson>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#LearningResource>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#MathematicalConcept>
+
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Problem>
+
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#RealworldApp>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Problem>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Sine>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Solution>
+
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Student>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#User>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Tangent>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Teacher>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#User>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Triangle>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#GeometricConcept>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#MathematicalConcept>
+    
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#User>
+
+    
+Class: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#WordProblem>
+
+    SubClassOf: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Problem>
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#BridgeAngleProblem>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Problem>,
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#RealworldApp>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isSolvedBy>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#PythagoreanTheorem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isSolvedBy>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TriangleProblem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "Find the angle of elevation of a bridge given the opposite and hypotenuse.",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDifficulty>  "Advanced",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasScore>  12,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasTopic>  "Angle of Elevation, Sine Function"
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#BridgeAngleSolution>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Solution>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isSolutionFor>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#BridgeAngleProblem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "Step 1: Measure the bridge height and base length. Step 2: Calculate the angle of elevation using sine. Step 3: Confirm using cosine. Step 4: Interpret results."
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#BuildingHeightProblem>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#RealworldApp>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isSolvedBy>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#PythagoreanTheorem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "Use the tangent function to find the height of a building.",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDifficulty>  "Advanced",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasScore>  15,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasTopic>  "Tangent Function"
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Cosine>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isPrerequisiteFor>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToCosineLesson>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "The cosine of an angle is the ratio of the adjacent side to the hypotenuse."
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#DistanceCalculationProblem>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#WordProblem>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isSolvedBy>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#PythagoreanTheorem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isSolvedBy>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TriangleProblem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "Calculate the distance between two points using cosine.",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDifficulty>  "Advanced",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasScore>  12,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasTopic>  "Cosine Function, Distance Problems"
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#DistanceCalculationSolution>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Solution>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isSolutionFor>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#DistanceCalculationProblem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "Step 1: Identify the sides of the triangle and the angle between them. Step 2: Use the cosine rule: c² = a² + b² - 2ab*cos(θ). Step 3: Calculate the value of c (distance). Step 4: Verify the result by checking all units and calculations."
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#FindHeightSolution>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Solution>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isSolutionFor>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#BuildingHeightProblem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDifficulty>  "Step 1: Identify the angle of elevation and opposite side. Step 2: Use the tangent function to calculate height. Step 3: Verify the solution."
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToCosineLesson>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Lesson>,
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isAssociatedWith>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToCosineLesson>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isAssociatedWith>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToSineLesson>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isAssociatedWith>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToTangentLesson>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isPrerequisiteFor>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TriangleProblem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasComplexity>  "Beginner",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "An introductory lesson on the cosine function, covering definitions and applications."
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToSineLesson>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Lesson>,
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isAssociatedWith>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToCosineLesson>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isAssociatedWith>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToSineLesson>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isAssociatedWith>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToTangentLesson>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isPrerequisiteFor>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TriangleProblem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasComplexity>  "Beginner",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "An introductory lesson on the sine function, covering definitions and applications."
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToTangentLesson>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Lesson>,
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isAssociatedWith>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToCosineLesson>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isAssociatedWith>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToSineLesson>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isAssociatedWith>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToTangentLesson>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isPrerequisiteFor>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TriangleProblem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasComplexity>  "Intermediate",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "An introductory lesson on the tangent function, covering definitions and applications."
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#PythagoreanTheorem>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#GeometricConcept>,
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Lesson>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isTaughtUsing>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#PythagoreanTheorem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasComplexity>  "Intermediate",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "A lesson explaining the Pythagorean theorem and its role in trigonometry."
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#RightTriangleProblem>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#BasicConcept>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isSolvedBy>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#PythagoreanTheorem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "Calculate the hypotenuse of a right triangle given two sides.",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDifficulty>  "Beginner",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasScore>  10,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasTopic>  "Right Triangles, Sine Function"
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#RightTriangleSolution>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Solution>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isSolutionFor>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#RightTriangleProblem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "Step 1: Apply the Pythagorean theorem to find the hypotenuse. Step 2: Use the sine function to calculate the angle."
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Sine>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isPrerequisiteFor>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToSineLesson>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "The sine of an angle is the ratio of the opposite side to the hypotenuse/."
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Tangent>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TrigonometricFunction>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isPrerequisiteFor>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#IntroToTangentLesson>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "Used to calculate height and distance problems in real-world scenarios."
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TriangleProblem>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#GeometricConcept>,
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Lesson>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isAssociatedWith>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#TriangleProblem>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasComplexity>  "Advanced",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "Collection of lessons to teach Non Right Angle Triangle problems."
+    
+    
+Individual: <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#UnitCircleVisualization>
+
+    Types: 
+        <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#Example>
+    
+    Facts:  
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#isTaughtUsing>  <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#UnitCircleVisualization>,
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasComplexity>  "Advanced",
+     <http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#hasDescription>  "Interactive unit circle visualization explaining sine and cosine."
+    
+    

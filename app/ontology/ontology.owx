@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS"
+         xmlns="http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/user/ontologies/2024/11/TrigonometryITS"/>
+
+<owl:ObjectProperty rdf:about="#ProvidesSolution">
+  <rdfs:domain rdf:resource="#Student"/>
+  <rdfs:range rdf:resource="#Problem"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCompletedLesson">
+  <rdfs:domain rdf:resource="#Student"/>
+  <rdfs:range rdf:resource="#LearningResource"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isAssociatedWith">
+  <rdfs:domain rdf:resource="#Problem"/>
+  <rdfs:range rdf:resource="#GeometricConcept"/>
+  <rdfs:range rdf:resource="#TrigonometricFunction"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isPartOf">
+  <rdfs:domain rdf:resource="#GeometricConcept"/>
+  <rdfs:range rdf:resource="#Angle"/>
+  <rdfs:range rdf:resource="#Triangle"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isPrerequisiteFor">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#TrigonometricFunction"/>
+  <rdfs:range rdf:resource="#TrigonometricFunction"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isSolutionFor"/>
+
+<owl:ObjectProperty rdf:about="#isSolvedBy">
+  <rdfs:domain rdf:resource="#Problem"/>
+  <rdfs:range rdf:resource="#Solution"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isTaughtUsing">
+  <rdfs:domain rdf:resource="#GeometricConcept"/>
+  <rdfs:domain rdf:resource="#TrigonometricFunction"/>
+  <rdfs:range rdf:resource="#LearningResource"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#providesLesson">
+  <rdfs:domain rdf:resource="#Teacher"/>
+  <rdfs:range rdf:resource="#LearningResource"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#takesLesson">
+  <rdfs:domain rdf:resource="#Student"/>
+  <rdfs:range rdf:resource="#LearningResource"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#viewsStudentSolutions">
+  <rdfs:domain rdf:resource="#Teacher"/>
+  <rdfs:range rdf:resource="#Solution"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#hasComplexity">
+  <rdfs:domain rdf:resource="#LearningResource"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDescription">
+  <rdfs:domain rdf:resource="#GeometricConcept"/>
+  <rdfs:domain rdf:resource="#LearningResource"/>
+  <rdfs:domain rdf:resource="#TrigonometricFunction"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasDifficulty">
+  <rdfs:domain rdf:resource="#Problem"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasName">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Student"/>
+  <rdfs:domain rdf:resource="#Teacher"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPassword">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Student"/>
+  <rdfs:domain rdf:resource="#Teacher"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasProgress">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Student"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#double"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasScore">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Student"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasTopic">
+  <rdfs:domain rdf:resource="#Problem"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Angle">
+  <rdfs:subClassOf rdf:resource="#GeometricConcept"/>
+</owl:Class>
+
+<owl:Class rdf:about="#BasicConcept">
+  <rdfs:subClassOf rdf:resource="#Problem"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Cosine">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:subClassOf rdf:resource="#TrigonometricFunction"/>
+  <rdf:type rdf:resource="#TrigonometricFunction"/>
+  <isPrerequisiteFor rdf:resource="#IntroToCosineLesson"/>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The cosine of an angle is the ratio of the adjacent side to the hypotenuse.</hasDescription>
+</owl:Class>
+
+<owl:Class rdf:about="#Example">
+  <rdfs:subClassOf rdf:resource="#LearningResource"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GeometricConcept">
+  <rdfs:subClassOf rdf:resource="#MathematicalConcept"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LearningResource"/>
+
+<owl:Class rdf:about="#Lesson">
+  <rdfs:subClassOf rdf:resource="#LearningResource"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MathematicalConcept"/>
+
+<owl:Class rdf:about="#Problem"/>
+
+<owl:Class rdf:about="#RealworldApp">
+  <rdfs:subClassOf rdf:resource="#Problem"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Sine">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:subClassOf rdf:resource="#TrigonometricFunction"/>
+  <rdf:type rdf:resource="#TrigonometricFunction"/>
+  <isPrerequisiteFor rdf:resource="#IntroToSineLesson"/>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">The sine of an angle is the ratio of the opposite side to the hypotenuse/.</hasDescription>
+</owl:Class>
+
+<owl:Class rdf:about="#Solution"/>
+
+<owl:Class rdf:about="#Student">
+  <rdfs:subClassOf rdf:resource="#User"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Tangent">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdfs:subClassOf rdf:resource="#TrigonometricFunction"/>
+  <rdf:type rdf:resource="#TrigonometricFunction"/>
+  <isPrerequisiteFor rdf:resource="#IntroToTangentLesson"/>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Used to calculate height and distance problems in real-world scenarios.</hasDescription>
+</owl:Class>
+
+<owl:Class rdf:about="#Teacher">
+  <rdfs:subClassOf rdf:resource="#User"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Triangle">
+  <rdfs:subClassOf rdf:resource="#GeometricConcept"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TrigonometricFunction">
+  <rdfs:subClassOf rdf:resource="#MathematicalConcept"/>
+</owl:Class>
+
+<owl:Class rdf:about="#User"/>
+
+<owl:Class rdf:about="#WordProblem">
+  <rdfs:subClassOf rdf:resource="#Problem"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#BridgeAngleProblem">
+  <rdf:type rdf:resource="#Problem"/>
+  <rdf:type rdf:resource="#RealworldApp"/>
+  <isSolvedBy rdf:resource="#PythagoreanTheorem"/>
+  <isSolvedBy rdf:resource="#TriangleProblem"/>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Find the angle of elevation of a bridge given the opposite and hypotenuse.</hasDescription>
+  <hasDifficulty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Advanced</hasDifficulty>
+  <hasScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12.0</hasScore>
+  <hasTopic rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Angle of Elevation, Sine Function</hasTopic>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#BridgeAngleSolution">
+  <rdf:type rdf:resource="#Solution"/>
+  <isSolutionFor rdf:resource="#BridgeAngleProblem"/>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Step 1: Measure the bridge height and base length. Step 2: Calculate the angle of elevation using sine. Step 3: Confirm using cosine. Step 4: Interpret results.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#BuildingHeightProblem">
+  <rdf:type rdf:resource="#RealworldApp"/>
+  <isSolvedBy rdf:resource="#PythagoreanTheorem"/>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Use the tangent function to find the height of a building.</hasDescription>
+  <hasDifficulty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Advanced</hasDifficulty>
+  <hasScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">15.0</hasScore>
+  <hasTopic rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tangent Function</hasTopic>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#DistanceCalculationProblem">
+  <rdf:type rdf:resource="#WordProblem"/>
+  <isSolvedBy rdf:resource="#PythagoreanTheorem"/>
+  <isSolvedBy rdf:resource="#TriangleProblem"/>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Calculate the distance between two points using cosine.</hasDescription>
+  <hasDifficulty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Advanced</hasDifficulty>
+  <hasScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">12.0</hasScore>
+  <hasTopic rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cosine Function, Distance Problems</hasTopic>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#DistanceCalculationSolution">
+  <rdf:type rdf:resource="#Solution"/>
+  <isSolutionFor rdf:resource="#DistanceCalculationProblem"/>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Step 1: Identify the sides of the triangle and the angle between them. Step 2: Use the cosine rule: c² = a² + b² - 2ab*cos(θ). Step 3: Calculate the value of c (distance). Step 4: Verify the result by checking all units and calculations.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#FindHeightSolution">
+  <rdf:type rdf:resource="#Solution"/>
+  <isSolutionFor rdf:resource="#BuildingHeightProblem"/>
+  <hasDifficulty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Step 1: Identify the angle of elevation and opposite side. Step 2: Use the tangent function to calculate height. Step 3: Verify the solution.</hasDifficulty>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#IntroToCosineLesson">
+  <rdf:type rdf:resource="#Lesson"/>
+  <rdf:type rdf:resource="#TrigonometricFunction"/>
+  <isAssociatedWith rdf:resource="#IntroToCosineLesson"/>
+  <isAssociatedWith rdf:resource="#IntroToSineLesson"/>
+  <isAssociatedWith rdf:resource="#IntroToTangentLesson"/>
+  <isPrerequisiteFor rdf:resource="#TriangleProblem"/>
+  <hasComplexity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beginner</hasComplexity>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An introductory lesson on the cosine function, covering definitions and applications.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#IntroToSineLesson">
+  <rdf:type rdf:resource="#Lesson"/>
+  <rdf:type rdf:resource="#TrigonometricFunction"/>
+  <isAssociatedWith rdf:resource="#IntroToCosineLesson"/>
+  <isAssociatedWith rdf:resource="#IntroToSineLesson"/>
+  <isAssociatedWith rdf:resource="#IntroToTangentLesson"/>
+  <isPrerequisiteFor rdf:resource="#TriangleProblem"/>
+  <hasComplexity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beginner</hasComplexity>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An introductory lesson on the sine function, covering definitions and applications.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#IntroToTangentLesson">
+  <rdf:type rdf:resource="#Lesson"/>
+  <rdf:type rdf:resource="#TrigonometricFunction"/>
+  <isAssociatedWith rdf:resource="#IntroToCosineLesson"/>
+  <isAssociatedWith rdf:resource="#IntroToSineLesson"/>
+  <isAssociatedWith rdf:resource="#IntroToTangentLesson"/>
+  <isPrerequisiteFor rdf:resource="#TriangleProblem"/>
+  <hasComplexity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intermediate</hasComplexity>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">An introductory lesson on the tangent function, covering definitions and applications.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#PythagoreanTheorem">
+  <rdf:type rdf:resource="#GeometricConcept"/>
+  <rdf:type rdf:resource="#Lesson"/>
+  <isTaughtUsing rdf:resource="#PythagoreanTheorem"/>
+  <hasComplexity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Intermediate</hasComplexity>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">A lesson explaining the Pythagorean theorem and its role in trigonometry.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#RightTriangleProblem">
+  <rdf:type rdf:resource="#BasicConcept"/>
+  <isSolvedBy rdf:resource="#PythagoreanTheorem"/>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Calculate the hypotenuse of a right triangle given two sides.</hasDescription>
+  <hasDifficulty rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beginner</hasDifficulty>
+  <hasScore rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">10.0</hasScore>
+  <hasTopic rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Right Triangles, Sine Function</hasTopic>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#RightTriangleSolution">
+  <rdf:type rdf:resource="#Solution"/>
+  <isSolutionFor rdf:resource="#RightTriangleProblem"/>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Step 1: Apply the Pythagorean theorem to find the hypotenuse. Step 2: Use the sine function to calculate the angle.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#TriangleProblem">
+  <rdf:type rdf:resource="#GeometricConcept"/>
+  <rdf:type rdf:resource="#Lesson"/>
+  <isAssociatedWith rdf:resource="#TriangleProblem"/>
+  <hasComplexity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Advanced</hasComplexity>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Collection of lessons to teach Non Right Angle Triangle problems.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#UnitCircleVisualization">
+  <rdf:type rdf:resource="#Example"/>
+  <isTaughtUsing rdf:resource="#UnitCircleVisualization"/>
+  <hasComplexity rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Advanced</hasComplexity>
+  <hasDescription rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Interactive unit circle visualization explaining sine and cosine.</hasDescription>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Jane Doe">
+  <rdf:type rdf:resource="#Teacher"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Jane Doe</hasName>
+  <hasPassword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19992712</hasPassword>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#John Doe">
+  <rdf:type rdf:resource="#Student"/>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">John Doe</hasName>
+  <hasPassword rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19992712</hasPassword>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
